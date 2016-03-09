@@ -20044,23 +20044,20 @@
 	    $httpBackend.when('GET', '/templates/pic_gallery/directives/pic_gallery.html').respond(200, template);
 	    var scope = $rootScope.$new();
 	    scope.newPic = { name: 'test pic', url: 'green' };
-	    var element = $compile('<pic data-pic-data="newPic">This is a test</pic>')(scope);
+	    var element = $compile('<pic-gallery data-pic-data="newPic">This is a test</pic-gallery>')(scope);
 	    $httpBackend.flush();
 	    $rootScope.$digest();
 	    expect(element.html()).toContain('test pic');
-	    expect(element.html()).toContain('Dead');
-	    expect(element.html()).toContain('green');
 	    expect(element.html()).toContain('This is a test');
 	  });
 
 	  it('should load the directive with an appropriate object', function () {
 	    $httpBackend.when('GET', '/templates/pic_gallery/directives/pic_gallery.html').respond(200, template);
 	    var scope = $rootScope.$new();
-	    var element = $compile('<pic data-pic-data="{name: \'test\', url: \'blue\'}">inside directive</pic>')(scope);
+	    var element = $compile('<pic-gallery data-pic-data="{name: \'test\', url: \'blue\'}">inside directive</pic-gallery>')(scope);
 	    $httpBackend.flush();
 	    $rootScope.$digest();
 	    expect(element.html()).toContain('test');
-	    expect(element.html()).toContain('Alive');
 	    expect(element.html()).toContain('blue');
 	    expect(element.html()).toContain('inside directive');
 	  });
@@ -20128,7 +20125,7 @@
 /* 18 */
 /***/ function(module, exports) {
 
-	module.exports = "<form data-ng-submit=\"save(pic)\">\n\n  <label for=\"name\">Name:</label> <br>\n  <input type=\"text\" name=\"name\" data-ng-model=\"pic.name\" placeholder=\"Name\"/> <br>\n\n  <!-- <label for=\"datePublished\">Date Published:</label> <br>\n  <input type=\"text\" name=\"datePublished\" data-ng-model=\"pic.datePublished\"/> <br> -->\n\n  <label for=\"url\">URL:</label> <br>\n  <input type=\"text\" name=\"url\" data-ng-model=\"pic.url\"/> <br>\n\n  <ng-transclude></ng-transclude>\n  <button class=\"button is-small is-primary\" type=\"submit\">{{buttonText}}</button>\n</form>\n";
+	module.exports = "<form data-ng-submit=\"save(pic)\">\n\n  <label for=\"name\">Name:</label> <br>\n  <input type=\"text\" name=\"name\" data-ng-model=\"pic.name\" placeholder=\"Name\"/> <br>\n\n  <label for=\"url\">URL:</label> <br>\n  <input type=\"text\" name=\"url\" data-ng-model=\"pic.url\"/> <br>\n\n  <ng-transclude></ng-transclude>\n  <button class=\"button is-small is-primary\" type=\"submit\">{{buttonText}}</button>\n</form>\n";
 
 /***/ }
 /******/ ]);

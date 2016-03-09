@@ -10,7 +10,6 @@ const jsFiles = ['./*.js', 'app/**/*.js', '!node_modules/**'];
 const clientScripts = ['app/js/entry.js'];
 const staticFiles = ['app/**/*.html'];
 const sassFiles = ['app/**/styles.sass'];
-// const testFiles = ['test/test_entry.js'];
 
 gulp.task('html:dev', () => {
   gulp.src(staticFiles)
