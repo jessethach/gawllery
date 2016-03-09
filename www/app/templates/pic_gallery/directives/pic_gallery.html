@@ -1,0 +1,9 @@
+<li>
+  <p data-ng-if="picData.name" role="list" class="pic-list">
+    {{picData.name}} <br>
+    Status: {{picData.url}} <br>
+  </p>
+  <img src="{{picData.url}}"/>
+
+  <section role="actions" class="actions" data-ng-transclude></section>
+</li>

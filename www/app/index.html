@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Super Jedi Stream Adventure</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/sass/styles.css">
+</head>
+<body data-ng-app="picGalleryApp">
+		<section class="hero is-medium is-danger is-bold">
+			<section class="hero-header">
+				<header class="header">
+					<!-- Main container -->
+					<nav class="container">
+					  <!-- Left side -->
+					  <section class="header-left">
+					    <section class="header-item">
+					      <p class="control is-grouped">
+					        <input class="input" type="text" placeholder="Find Image">
+					      </p>
+					    </section>
+					  </section>
+
+					  <!-- Right side -->
+					  <section class="header-right">
+					    <p class="header-item"><a ng-href="/#/">Home</a></p>
+					  </section>
+					</nav>
+				</header>
+				<section class="hero-content">
+					<section class="container">
+						<p class="title">Gallery</p>
+						<p class="subtitle">An app developed by Jesse Thach</p>
+					</section>
+				</section>
+			</section>
+		</section>
+
+		<!-- Angular view content -->
+		<main class="section">
+			<section data-ng-view class="container">
+			</section>
+		</main>
+
+
+
+	<footer class="footer">
+		<section class="container">
+			<section class="is-text-centered">
+				<p>
+					Code Fellows
+				</p>
+			</section>
+		</section>
+	</footer>
+
+  <script src="bundle.js"></script>
+</body>
+</html>
